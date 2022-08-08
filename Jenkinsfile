@@ -7,5 +7,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
+         stage('Code Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
     }
 }
