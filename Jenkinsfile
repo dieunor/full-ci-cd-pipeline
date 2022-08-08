@@ -7,12 +7,9 @@ pipeline {
                 echo 'Hello World'
             }
         }
-         // Building Docker images
-        stage('Building image') {
-            steps{
-                script {
-                    dockerImage = docker.build registry
-                }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
         }
         
